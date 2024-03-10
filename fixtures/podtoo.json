@@ -1,0 +1,14 @@
+{
+  "type": "rich",
+  "version": "1.0",
+  "title": "Brainjacked Radio #044",
+  "author_name": "Damon Sharpe presents Brainjack Radio",
+  "provider_name": "Podtoo",
+  "provider_url": "https://embed.podtoo.com",
+  "thumbnail_url": "https://cdn.podtoo.com/syndication/2023/09/1695682503780https___media3_damonsharpe_podtree_com_damonsharpe_media_itunes_image_brainjack_radio_3000x3000_ap_2022_jpg",
+  "thumbnail_width": 500,
+  "thumbnail_height": 500,
+  "width": 900,
+  "height": 379,
+  "html": "<iframe src=\"https://embed.podtoo.com/Damon-Sharpe-presents-Brainjack-Radio/Brainjacked-Radio-#044\" width=\"900\" height=\"379\" style=\"border:none;\" allow=\"fullscreen\"></iframe>"
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Implements hook_media_source_info_alter() for PodToo.
+ */
+
+use Drupal\media\Plugin\media\Source\OEmbed;
+
+/**
+ * Implements hook_media_source_info_alter().
+ */
+function media_entity_podtoo_media_source_info_alter(array &$definitions) {
+  $definitions['oembed:audio']['providers'][] = 'Podtoo';
+}

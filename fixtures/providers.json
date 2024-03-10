@@ -1,0 +1,16 @@
+[
+  {
+    "provider_name": "Podtoo",
+    "provider_url": "https://podtoo.com",
+    "endpoints": [
+      {
+        "schemes": [
+          "https://embed.podtoo.com/*",
+          "https://podcasts.podtoo.com/*"
+        ],
+        "url": "https://embed.podtoo.com/api/oEmbed",
+        "discovery": false
+      }
+    ]
+  }
+]

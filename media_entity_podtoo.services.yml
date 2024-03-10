@@ -1,0 +1,4 @@
+services:
+  Drupal\media_entity_podtoo\ProviderRepository:
+    decorates: media.oembed.provider_repository
+    public: false
