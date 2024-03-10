@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_oembed_podtoo
+    - media.type.podtoo
+id: media.podtoo.field_media_oembed_podtoo
+field_name: field_media_oembed_podtoo
+entity_type: media
+bundle: podtoo
+label: 'PodToo URL'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

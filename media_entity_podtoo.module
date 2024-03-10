@@ -11,5 +11,22 @@ use Drupal\media\Plugin\media\Source\OEmbed;
  * Implements hook_media_source_info_alter().
  */
 function media_entity_podtoo_media_source_info_alter(array &$definitions) {
-  $definitions['oembed:audio']['providers'][] = 'Podtoo';
+  // Reuse certain values from core's oEmbed video source.
+  $base_definition = $definitions['oembed:video'];
+
+  $definitions['oembed:podtoo'] = [
+    'id' => 'oembed:podtoo',
+    'label' => t('PodToo'),
+    'description' => t('Stream audio from PodToo.'),
+    'allowed_field_types' => ['string'],
+    'default_name_metadata_attribute' => $base_definition['default_name_metadata_attribute'],
+    'default_thumbnail_filename' => 'no-thumbnail.png',
+    'thumbnail_uri_metadata_attribute' => $base_definition['thumbnail_uri_metadata_attribute'],
+    'thumbnail_width_metadata_attribute' => $base_definition['thumbnail_width_metadata_attribute'],
+    'thumbnail_height_metadata_attribute' => $base_definition['thumbnail_height_metadata_attribute'],
+    'thumbnail_alt_metadata_attribute' => 'title',
+    'providers' => ['Podtoo'],
+    'class' => OEmbed::class,
+    'provider' => 'media_entity_podtoo',
+  ];
 }

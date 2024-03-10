@@ -1,8 +1,0 @@
-<?php
-
-/**
- * Implements hook_install().
- */
-function media_entity_podtoo_install() {
-  module_set_weight('media_entity_podtoo', 10);
-}

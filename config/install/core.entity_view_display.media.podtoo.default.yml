@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.podtoo.field_media_oembed_podtoo
+    - media.type.podtoo
+  module:
+    - media
+id: media.podtoo.default
+targetEntityType: media
+bundle: podtoo
+mode: default
+content:
+  field_media_oembed_podtoo:
+    type: oembed
+    label: visually_hidden
+    settings:
+      max_width: 0
+      max_height: 0
+      loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

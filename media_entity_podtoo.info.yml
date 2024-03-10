@@ -5,4 +5,3 @@ core_version_requirement: ^9.2.9 || ^10
 description: 'Provides oEmbed media integration for PodToo.'
 dependencies:
   - drupal:media
-  - drupal:media_remote_audio
