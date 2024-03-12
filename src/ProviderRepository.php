@@ -14,15 +14,17 @@ final class ProviderRepository implements ProviderRepositoryInterface {
    * {@inheritdoc}
    */
   public function getAll() {
-    $list = __DIR__ . '/../fixtures/providers.json';
-    $list = file_get_contents($list);
-    $list = json_decode($list, TRUE, 512, JSON_THROW_ON_ERROR);
-
     $all = [];
-    foreach ($list as $p) {
-      $name = $p['provider_name'];
-      $all[$name] = new Provider($name, $p['provider_url'], $p['endpoints']);
-    }
+    $endpoints = [];
+    $endpoints[] = [
+      'schemes' => [
+        'https://embed.podtoo.com/*',
+        'https://podcasts.podtoo.com/*',
+      ],
+      'url' => 'https://embed.podtoo.com/api/oEmbed',
+      'discovery' => FALSE,
+    ];
+    $all['Podtoo'] = new Provider('Podtoo', 'https://podtoo.com', $endpoints);
     return $all;
   }
 
