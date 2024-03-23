@@ -1,0 +1,5 @@
+media_entity_podtoo.configuration:
+  title: 'PodToo'
+  description: 'Configure PodToo player display.'
+  route_name: media_entity_podtoo.configuration
+  parent: system.admin_config_media

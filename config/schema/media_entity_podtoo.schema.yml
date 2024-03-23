@@ -1,0 +1,9 @@
+media_entity_podtoo.settings:
+  type: config_entity
+  mapping:
+    color:
+      type: string
+      label: 'Background color'
+    display:
+      type: string
+      label: 'Player display'

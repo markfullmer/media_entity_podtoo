@@ -1,0 +1,7 @@
+media_entity_podtoo.configuration:
+  path: '/admin/config/media/podtoo'
+  defaults:
+    _form: '\Drupal\media_entity_podtoo\Form\ConfigurationForm'
+    _title: 'PodToo'
+  requirements:
+    _permission: 'administer site configuration'
