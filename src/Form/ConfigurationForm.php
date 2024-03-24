@@ -14,8 +14,8 @@ class ConfigurationForm extends ConfigFormBase {
    * @var display
    */
   public static $display = [
-    'compact' => 'Compact',
     'standard' => 'Standard',
+    'compact' => 'Compact',
   ];
 
   /**
@@ -47,7 +47,7 @@ class ConfigurationForm extends ConfigFormBase {
     $color = $settings->get('color');
     $form['color'] = [
       '#title' => $this->t('Player background color'),
-      '#description' => $this->t('Leave blank to use the default PodToo player or enter a color code in <a href="https://en.wikipedia.org/wiki/Web_colors" target="_blank">hex format</a> (e.g., "FF0000".'),
+      '#description' => $this->t('Enter a color code in <a href="https://en.wikipedia.org/wiki/Web_colors" target="_blank">hex format</a> (e.g., "FF0000".). Leave blank to use the default PodToo player color.'),
       '#type' => 'textfield',
       '#size' => 6,
       '#default_value' => $color ?? '',
@@ -60,7 +60,7 @@ class ConfigurationForm extends ConfigFormBase {
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     $color = $form_state->getValue('color');
-    if (!preg_match('/^[a-f0-9]{6}$/i', $color)) {
+    if (!empty($color) && !preg_match('/^[a-f0-9]{6}$/i', $color)) {
       $form_state->setErrorByName('color', $this->t('Enter a valid color code in hex format or leave the field blank.'));
     }
   }
