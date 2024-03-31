@@ -7,3 +7,12 @@ media_entity_podtoo.settings:
     display:
       type: string
       label: 'Player display'
+    username:
+      type: boolean
+      label: 'Username'
+    email:
+      type: boolean
+      label: 'Email'
+    uid:
+      type: boolean
+      label: 'uid'

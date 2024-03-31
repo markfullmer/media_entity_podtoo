@@ -15,11 +15,13 @@ Add this module to a site's codebase as you would other custom modules. For most
 
 Install as you would normally install a Drupal module, either through the "Extend" page in the Drupal interface or via command line (`drush en media_entity_podtoo -y`).
 
-## Site-wide display settings
+## Site-wide settings
 
 Set the display size and player color at **Configuration > PodToo** (`/admin/config/media/podtoo`). Only users/roles with the "Administer site configuration" permission may access these settings. Settings apply globally to all PodToo media instances.
 
 ![Screenshot of site-wide configuration form](podtoo-settings.png)
+
+PodToo integration also supports sending user request information to the PodToo endpoint. Options for sending the username, email, and/or `uid` are located in this settings form.
 
 ## Permissions
 

@@ -52,6 +52,28 @@ class ConfigurationForm extends ConfigFormBase {
       '#size' => 6,
       '#default_value' => $color ?? '',
     ];
+    $form['user'] = [
+      '#type' => 'fieldset',
+      '#title' => $this->t('Personalisation data sent to PodToo'),
+    ];
+    $username = $settings->get('username');
+    $email = $settings->get('email');
+    $uid = $settings->get('uid');
+    $form['user']['username'] = [
+      '#type' => 'checkbox',
+      '#title' => 'When media is requested, send Drupal user <code>username</code> as parameter to PodToo endpoint.',
+      '#default_value' => $username ?? FALSE,
+    ];
+    $form['user']['email'] = [
+      '#type' => 'checkbox',
+      '#title' => 'When media is requested, send Drupal user <code>email</code> as parameter to PodToo endpoint.',
+      '#default_value' => $email ?? FALSE,
+    ];
+    $form['user']['uid'] = [
+      '#type' => 'checkbox',
+      '#title' => 'When media is requested, send Drupal user <code>uid</code> as parameter to PodToo endpoint.',
+      '#default_value' => $uid ?? FALSE,
+    ];
     return parent::buildForm($form, $form_state);
   }
 
@@ -72,6 +94,9 @@ class ConfigurationForm extends ConfigFormBase {
     $config = $this->configFactory->getEditable('media_entity_podtoo.settings');
     $config->set('display', $form_state->getValue('display'))->save();
     $config->set('color', $form_state->getValue('color'))->save();
+    $config->set('uid', $form_state->getValue('uid'))->save();
+    $config->set('username', $form_state->getValue('username'))->save();
+    $config->set('email', $form_state->getValue('email'))->save();
     drupal_flush_all_caches();
     parent::submitForm($form, $form_state);
   }

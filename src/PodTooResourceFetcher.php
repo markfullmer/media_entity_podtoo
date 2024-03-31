@@ -3,6 +3,7 @@
 namespace Drupal\media_entity_podtoo;
 
 use Drupal\media\OEmbed\ResourceFetcher;
+use Drupal\user\Entity\User;
 
 /**
  * Extends the oEmbed resource fetcher for PodToo-specific settings.
@@ -26,6 +27,24 @@ class PodTooResourceFetcher extends ResourceFetcher {
     $display = $config->get('display');
     if ($display === 'compact') {
       $queries['compact'] = 'true';
+    }
+    $send_username = $config->get('username');
+    $send_email = $config->get('email');
+    $send_uid = $config->get('uid');
+    if ($send_username || $send_email || $send_uid) {
+      $user = User::load(\Drupal::currentUser()->id());
+      if ($send_username) {
+        $name = $user->get('name')->value;
+        $queries['username'] = $name;
+      }
+      if ($send_email) {
+        $email = $user->get('mail')->value;
+        $queries['email'] = $email;
+      }
+      if ($send_uid) {
+        $uid = $user->get('uid')->value;
+        $queries['uid'] = $uid;
+      }
     }
     $parts = parse_url($url);
     parse_str($parts['query'], $query);
