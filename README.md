@@ -6,8 +6,8 @@ This module provides a Drupal media entity type for easily embedding content fro
 
 This module has the following requirements:
 
-- Drupal ^9.2.9 || ^10
-- Media (included in core)
+- Drupal ^9.2.9 || ^10 || ^11
+- Media module (included in Drupal core)
 
 ## Installation
 
